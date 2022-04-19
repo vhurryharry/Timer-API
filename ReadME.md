@@ -69,3 +69,9 @@
         "remaining": "Time remaining in ms"
     }
   ```
+
+## Run
+
+Make sure that the docker is setup and running on your machine.
+
+`docker-compose up -d --build`
