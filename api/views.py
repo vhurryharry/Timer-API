@@ -18,7 +18,7 @@ class TimerViewSet(viewsets.ModelViewSet):
 
     def create(self, request):
         timer = Timer.objects.create(**request.data)
-        return Response(TimerSerializer(timer).data)
+        return Response(timer.id)
 
     def retrieve(self, request, pk=None):
         timer = self.get_timer(pk)
