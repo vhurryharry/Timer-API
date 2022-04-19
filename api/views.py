@@ -1,4 +1,4 @@
-from django.http import Http404
+from django.http import Http404, JsonResponse
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
@@ -14,7 +14,7 @@ class TimerViewSet(viewsets.ModelViewSet):
         try:
             return Timer.objects.get(pk=pk)
         except Timer.DoesNotExist:
-            raise Http404({'message': 'Timer does not exist'})
+            raise Http404()
 
     def create(self, request):
         timer = Timer.objects.create(**request.data)
