@@ -75,3 +75,17 @@
 Make sure that the docker is setup and running on your machine.
 
 `docker-compose up -d --build`
+
+Then you can access the api on `http://localhost:8000`.
+
+## Admin
+
+In case you want to use the Django admin panel, create a superuser using this command.
+
+Get the docker container id from the Docker desktop.
+
+`docker exec -it container_id python manage.py createsuperuser`
+
+Eg: `docker exec -it timer_web_1 python manage.py createsuperuser`
+
+Then open `http://localhost:8000/admin` and login with the superuser you've just created.
